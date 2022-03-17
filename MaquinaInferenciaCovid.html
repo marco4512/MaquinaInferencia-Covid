@@ -1,0 +1,54 @@
+<html>
+	<head>
+		<title>Maquina de </title>
+	</head>
+	
+	<body>
+		<script>
+			let por = 0;
+			let preguntas = ["¿Tienes dificultad para respirar?",
+							 "¿Presenta fiebre mayor a 37°?",
+							 "¿Presenta escalofrios?",
+							 "¿Tiene tos peristente o problemas respiratorios repentinos?",
+							 "¿Presenta dolor abdominal o muscular?",
+							 "¿Ha estado en contacto con una persona con covid?",
+                             "¿Presenta perdida del Olfato o gusto?",
+							 "¿Presenta diarrea o vomito?"
+							];
+
+			
+			if (confirm("¿Conoce los sintomas, y padece alguno de estos?")){
+				por += 13;
+				if (confirm("¿los sintomas han persistido por mas de 14 dias?")){
+					por += 14;
+				}
+			}
+			else{
+				por += 14;
+				alert("A continuacion, \nPresentaremos algunos de los sintomas!!!!!\nContesta con sinceridad.");
+				for(let con = 0; con<5;con++){
+					if(confirm(preguntas[con])){
+						por += 14;
+					}
+				}
+			}
+			
+			//Resultados
+			if(por<=27){alert("No necesariamente es COVID ");}
+			if(por>=28 && por<=55){alert("¡¡¡No determinante!!!\nConsulta a un doctor para un diagnostico especializado c:");}
+			if(por>56){alert("Tienes COVID-19, cuidate!!!!");}
+
+			//Agradecimientos
+			
+			alert("Se agradece su tiempo c:\n!!!!!");
+			
+		</script>
+	</body>
+</html>
+
+
+
+
+
+
+	
